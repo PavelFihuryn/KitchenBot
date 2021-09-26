@@ -26,3 +26,9 @@ async def start_bot(message: Message, state: FSMContext):
                     kitchen_list.pop(0)
                 await bot.send_message(chat_id=user_id, text=kitchen)
         await sleep(300)
+
+
+@dp.message_handler(Command("echo"), state=None)
+async def start_bot(message: Message, state: FSMContext):
+    user_id = message['from']['id']
+    await bot.send_message(chat_id=user_id, text='Я жив, не ссы')
