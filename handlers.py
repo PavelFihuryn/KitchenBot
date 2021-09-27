@@ -1,3 +1,4 @@
+import os
 from asyncio import sleep
 
 from aiogram.dispatcher import FSMContext
@@ -5,9 +6,11 @@ from aiogram.dispatcher.filters import Text, Command
 from aiogram.types import Message
 
 
-from config import ADMIN_ID
+# from config import ADMIN_ID
 from main import bot, dp
 from parser import get_links
+
+ADMIN_ID = os.environ["ADMIN_ID"]
 
 
 async def send_to_admin(dp):

@@ -1,10 +1,5 @@
-import json
-import re
-
 import requests
-import lxml
 from bs4 import BeautifulSoup
-import datetime as dt
 
 
 def get_links():
