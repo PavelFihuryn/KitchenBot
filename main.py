@@ -3,12 +3,12 @@ import asyncio
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from aiogram import Bot, Dispatcher, executor
-from config import BOT_TOKEN
+# from config import BOT_TOKEN
 
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
-TOKEN = os.environ["BOT_TOKEN"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 ADMIN_ID = os.environ["ADMIN_ID"]
 
 loop = asyncio.get_event_loop()
