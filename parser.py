@@ -7,8 +7,11 @@ def get_links():
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'lxml')
 
-    links = soup.find('article', class_='kf-iwJ-a69a6')
-    links_list = links.find_all('a', class_='kf-wwee-3f4fa')
+    try:
+        links = soup.find('article', class_='kf-iwJ-a69a6')
+        links_list = links.find_all('a', class_='kf-wwee-3f4fa')
+    except Exception:
+        links_list = []
     kitchen = []
     for link in links_list:
         if str(link.find('span'))[6:-7].split(',')[0] == 'Сегодня':
@@ -18,6 +21,3 @@ def get_links():
 
 if __name__ == '__main__':
     print(*get_links(), sep='\n')
-
-
-
