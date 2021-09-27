@@ -8,6 +8,8 @@ from config import BOT_TOKEN
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
+TOKEN = os.environ["BOT_TOKEN"]
+ADMIN_ID = os.environ["ADMIN_ID"]
 
 loop = asyncio.get_event_loop()
 bot = Bot(BOT_TOKEN, parse_mode="HTML")

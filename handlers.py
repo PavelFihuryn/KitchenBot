@@ -5,13 +5,13 @@ from aiogram.dispatcher.filters import Text, Command
 from aiogram.types import Message
 
 
-from config import admin_id
+from config import ADMIN_ID
 from main import bot, dp
 from parser import get_links
 
 
 async def send_to_admin(dp):
-    await bot.send_message(chat_id=admin_id, text="Бот запущен")
+    await bot.send_message(chat_id=ADMIN_ID, text="Бот запущен")
 
 
 @dp.message_handler(Command("start"), state=None)
