@@ -19,15 +19,15 @@ async def send_to_admin(dp):
 
 @dp.message_handler(Command("start"), state=None)
 async def start_bot(message: Message, state: FSMContext):
-    kitchen_list = get_links()
+    item_list = get_links()
     user_id = message['from']['id']
     while True:
-        for kitchen in get_links():
-            if kitchen not in kitchen_list:
-                kitchen_list.append(kitchen)
-                while len(kitchen_list) > 50:
-                    kitchen_list.pop(0)
-                await bot.send_message(chat_id=user_id, text=kitchen)
+        for item in get_links():
+            if item not in item_list:
+                item_list.append(item)
+                if len(item_list) > 50:
+                    item_list.pop(0)
+                await bot.send_message(chat_id=user_id, text=item)
         await sleep(300)
 
 
