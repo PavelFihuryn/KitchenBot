@@ -9,7 +9,6 @@ def get_links():
     links = soup.find_all('article')
     kitchen = []
     for link in links:
-        print(str(link.find('span'))[6:-7].split(',')[0])  # )
         if str(link.find('span'))[6:-7].split(',')[0] == 'Сегодня':
             kitchen.append(link.find('a').get('href'))
     return kitchen
